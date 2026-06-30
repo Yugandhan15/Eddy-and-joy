@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+:root {
+  /* Core palette (from brief) */
+  --color-bg: #fafafa;
+  --color-card: #ffffff;
+  --color-ink: #111111;
+  --color-muted: #666666;
+  --color-accent: #ff8c69;
+  --color-accent-hover: #ff6a4d;
+
+  /* Derived tones for depth */
+  --color-ink-soft: #2b2b2b;
+  --color-line: #ececec;
+  --color-cream: #f3efe9;
+  --color-accent-tint: #fff1ec;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(17, 17, 17, 0.04), 0 12px 32px -16px rgba(17, 17, 17, 0.12);
+  --shadow-card: 0 1px 1px rgba(17, 17, 17, 0.03), 0 24px 48px -24px rgba(17, 17, 17, 0.18);
+  --shadow-glow: 0 18px 40px -12px rgba(255, 140, 105, 0.45);
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-card: var(--color-card);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-cream: var(--color-cream);
+  --color-line: var(--color-line);
+  --color-accent-tint: var(--color-accent-tint);
+  --color-ink-soft: var(--color-ink-soft);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.editorial-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+  font-weight: 600;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: transform 0.45s var(--ease-out-quart), box-shadow 0.45s var(--ease-out-quart),
+    background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-pill:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.glass-nav {
+  background: rgba(250, 250, 250, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+}
+
+.card-luxury {
+  background: var(--color-card);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.5s var(--ease-out-quart), box-shadow 0.5s var(--ease-out-quart);
+}
+
+.card-luxury:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -24px rgba(17, 17, 17, 0.26);
+}
+
+.section-label-divider {
+  width: 2.5rem;
+  height: 2px;
+  background: var(--color-accent);
+  display: inline-block;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-bg);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: var(--color-accent);
+}
