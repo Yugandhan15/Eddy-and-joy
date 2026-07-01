@@ -66,7 +66,7 @@ export default async function AccountPage() {
               </p>
             ) : (
               <ul className="mt-5 flex flex-col gap-3">
-                {bookings.map((b) => (
+                {bookingList.map((b) => (
                   <li
                     key={b.id}
                     className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-line p-4 text-sm"
