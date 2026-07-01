@@ -35,7 +35,7 @@ export default async function AccountPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Your Account" title={`Welcome, ${profile?.full_name || "there"}`} />
+      <PageHeader eyebrow="Your Account" title={`Welcome, ${(profile as any)?.full_name || "there"}`} />
       <section className="bg-bg py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <div className="card-luxury p-8">
@@ -47,7 +47,7 @@ export default async function AccountPage() {
               </div>
               <div>
                 <dt className="text-muted">Mobile</dt>
-                <dd className="mt-1 font-medium text-ink">{profile?.phone || "—"}</dd>
+                <dd className="mt-1 font-medium text-ink">{(profile as any)?.phone || "—"}</dd>
               </div>
             </dl>
 
